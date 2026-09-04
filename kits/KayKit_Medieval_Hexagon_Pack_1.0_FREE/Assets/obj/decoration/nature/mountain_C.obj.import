@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp2eiqysm3n0g"
+path="res://.godot/imported/mountain_C.obj-60c56bb83075521477ad67fc82b4ac51.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mountain_C.obj-60c56bb83075521477ad67fc82b4ac51.mesh"]
+
+source_file="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/mountain_C.obj"
+dest_files=["res://.godot/imported/mountain_C.obj-60c56bb83075521477ad67fc82b4ac51.mesh", "res://.godot/imported/mountain_C.obj-60c56bb83075521477ad67fc82b4ac51.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

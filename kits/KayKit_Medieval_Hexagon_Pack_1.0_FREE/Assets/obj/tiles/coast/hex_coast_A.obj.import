@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqmmwg18cn74l"
+path="res://.godot/imported/hex_coast_A.obj-f1e6b4220aaa670b79eac2bdb9c16291.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_coast_A.obj-f1e6b4220aaa670b79eac2bdb9c16291.mesh"]
+
+source_file="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/coast/hex_coast_A.obj"
+dest_files=["res://.godot/imported/hex_coast_A.obj-f1e6b4220aaa670b79eac2bdb9c16291.mesh", "res://.godot/imported/hex_coast_A.obj-f1e6b4220aaa670b79eac2bdb9c16291.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

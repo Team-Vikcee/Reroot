@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://i7mwcel4dpvj"]
+
+[ext_resource type="PackedScene" uid="uid://b7wy6wsgqf3fp" path="res://HexGrid.tscn" id="1_glv2v"]
+[ext_resource type="Environment" uid="uid://dihctwwhq5ob5" path="res://Environments/CinematicEnvironment.tres" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://cnk00q7ngnwv6" path="res://Environment/CenterScreenFocus.cs" id="3_center_focus"]
+[ext_resource type="CameraAttributesPhysical" uid="uid://crdv4e4cdsker" path="res://Environments/CinematicCameraAttributes.tres" id="5_fos0i"]
+[ext_resource type="Script" uid="uid://ygdg2mro4opb" path="res://Camera/TopDownCameraController.cs" id="5_top_down_camera"]
+[ext_resource type="ArrayMesh" uid="uid://d3flqklm6psif" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/rock_single_B.obj" id="6_devvj"]
+[ext_resource type="ArrayMesh" uid="uid://cots572vb5qle" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/rock_single_C.obj" id="7_3b0ty"]
+[ext_resource type="ArrayMesh" uid="uid://bcqoamyf4cgad" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/trees_A_cut.obj" id="8_bg4s2"]
+[ext_resource type="ArrayMesh" uid="uid://b76ase4hqnxw6" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/blue/building_church_blue.obj" id="9_hhcpw"]
+[ext_resource type="ArrayMesh" uid="uid://dfk87jcvsf0at" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/blue/building_home_A_blue.obj" id="10_mxvw5"]
+[ext_resource type="ArrayMesh" uid="uid://c2lwsirydsuel" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/waterplant_A.obj" id="11_xrxkg"]
+[ext_resource type="ArrayMesh" uid="uid://c6a2ygvxneo1w" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/buildings/neutral/building_stage_A.obj" id="12_sqvbp"]
+[ext_resource type="ArrayMesh" uid="uid://dpgyjlitvcon7" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/rock_single_E.obj" id="13_hri7i"]
+[ext_resource type="ArrayMesh" uid="uid://bwof814siw14o" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/props/barrel.obj" id="14_w3rk5"]
+[ext_resource type="ArrayMesh" uid="uid://bw47u3dtfswqx" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/tree_single_B.obj" id="15_5mvff"]
+[ext_resource type="ArrayMesh" uid="uid://dv2ofygwl21sy" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/tree_single_A_cut.obj" id="16_oye8v"]
+[ext_resource type="ArrayMesh" uid="uid://bxn8yp475cp0u" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/trees_B_small.obj" id="17_40n85"]
+[ext_resource type="ArrayMesh" uid="uid://q4vseqopuowu" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/nature/trees_B_medium.obj" id="18_gb15f"]
+[ext_resource type="ArrayMesh" uid="uid://dy7xs8bt7olo1" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/props/pallet.obj" id="19_sph85"]
+[ext_resource type="ArrayMesh" uid="uid://dnk7axrcws6ko" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/props/target.obj" id="20_o7g6l"]
+[ext_resource type="ArrayMesh" uid="uid://6i83hxujbert" path="res://kits/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/decoration/props/flag_red.obj" id="21_vi5kq"]
+
+[node name="Main" type="Node3D" unique_id=1469532470]
+
+[node name="HexGrid" parent="." unique_id=1871370843 instance=ExtResource("1_glv2v")]
+MapRadius = 64
+
+[node name="Environment" type="Node" parent="." unique_id=10912231]
+
+[node name="CameraRig" type="Node3D" parent="Environment" unique_id=40886281]
+script = ExtResource("5_top_down_camera")
+
+[node name="Camera3D" type="Camera3D" parent="Environment/CameraRig" unique_id=1514769421]
+current = true
+
+[node name="CenterScreenFocus" type="Node" parent="Environment/CameraRig/Camera3D" unique_id=1489272585]
+script = ExtResource("3_center_focus")
+WorldEnvironmentPath = NodePath("../../../WorldEnvironment")
+
+[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=892769621]
+transform = Transform3D(0.7858569, -0.12857436, 0.60489476, 0, 0.9781476, 0.2079117, -0.61840844, -0.16338885, 0.7686841, 0, 20, 0)
+light_temperature = 9000.0
+light_color = Color(0.99999887, 0.9918061, 0.65953624, 1)
+light_energy = 1.12
+light_volumetric_fog_energy = 0.75
+light_specular = 1.7
+shadow_enabled = true
+directional_shadow_blend_splits = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=75531480]
+environment = ExtResource("2_uu6xs")
+camera_attributes = ExtResource("5_fos0i")
+
+[node name="Node" type="Node" parent="." unique_id=524670634]
+
+[node name="BuildingChurchBlue" type="MeshInstance3D" parent="Node" unique_id=1787066390]
+transform = Transform3D(-0.8777441, 0, 0.47912994, 0, 1, 0, -0.47912994, 0, -0.8777441, 1.840075, 1.2405688, 3.0563488)
+mesh = ExtResource("9_hhcpw")
+
+[node name="BuildingChurchBlue2" type="MeshInstance3D" parent="Node" unique_id=169366043]
+transform = Transform3D(-0.88557446, 0, -0.46449733, 0, 1, 0, 0.46449733, 0, -0.88557446, 3.3715463, 1.237191, 2.967445)
+mesh = ExtResource("9_hhcpw")
+
+[node name="BuildingHomeABlue" type="MeshInstance3D" parent="Node" unique_id=1804064232]
+transform = Transform3D(-0.85136366, 0, -0.52457607, 0, 1, 0, 0.52457607, 0, -0.85136366, 3.9927568, 1.25, 1.2972183)
+mesh = ExtResource("10_mxvw5")
+
+[node name="BuildingChurchBlue3" type="MeshInstance3D" parent="Node" unique_id=1236752440]
+transform = Transform3D(-0.9106673, 0, -0.41314048, 0, 1, 0, 0.41314048, 0, -0.9106673, 4.9251475, 1.2405688, -0.08567572)
+mesh = ExtResource("9_hhcpw")
+
+[node name="BuildingChurchBlue4" type="MeshInstance3D" parent="Node" unique_id=1026806086]
+transform = Transform3D(-0.16145642, 0, -0.98687994, 0, 1, 0, 0.98687994, 0, -0.16145642, 5.7751203, 1.237191, -1.3627248)
+mesh = ExtResource("9_hhcpw")
+
+[node name="BuildingHomeABlue2" type="MeshInstance3D" parent="Node" unique_id=1545466410]
+transform = Transform3D(-0.09288208, 0, -0.9956772, 0, 1, 0, 0.9956772, 0, -0.09288208, 4.8142633, 1.25, -2.8634958)
+mesh = ExtResource("10_mxvw5")
+
+[node name="WaterplantA" type="MeshInstance3D" parent="Node" unique_id=1509324159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9008965, 1.0035988, -1.7542448)
+mesh = ExtResource("11_xrxkg")
+
+[node name="BuildingStageA" type="MeshInstance3D" parent="Node" unique_id=867252595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45831, 1.005896, -1.7578447)
+mesh = ExtResource("12_sqvbp")
+
+[node name="BuildingStageA2" type="MeshInstance3D" parent="Node" unique_id=1074608943]
+transform = Transform3D(-0.43091735, 0, 0.9023914, 0, 1, 0, -0.9023914, 0, -0.43091735, 3.684506, 1.0058964, -0.08229804)
+mesh = ExtResource("12_sqvbp")
+
+[node name="RockSingleE" type="MeshInstance3D" parent="Node" unique_id=43422286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1173072, 0.750094, -1.819225)
+mesh = ExtResource("13_hri7i")
+
+[node name="RockSingleE2" type="MeshInstance3D" parent="Node" unique_id=2117745018]
+transform = Transform3D(1.5667825, 0, 0.7096428, 0, 1.72, 0, -0.7096428, 0, 1.5667825, 2.3645883, 0.7500939, -1.6225611)
+mesh = ExtResource("13_hri7i")
+
+[node name="RockSingleE3" type="MeshInstance3D" parent="Node" unique_id=1641091922]
+transform = Transform3D(1.2537091, 0, -1.6784631, 0, 2.095, 0, 1.6784631, 0, 1.2537091, 2.871523, 0.750094, -1.2262635)
+mesh = ExtResource("13_hri7i")
+
+[node name="WaterplantA2" type="MeshInstance3D" parent="Node" unique_id=437115004]
+transform = Transform3D(0.80392504, 0, -0.5947306, 0, 1, 0, 0.5947306, 0, 0.80392504, 3.7513509, 1.0112002, -1.8384125)
+mesh = ExtResource("11_xrxkg")
+
+[node name="Barrel" type="MeshInstance3D" parent="Node" unique_id=1198236597]
+transform = Transform3D(0.6055854, 0.7957805, 0, -0.7957805, 0.6055854, 0, 0, 0, 1, 2.733673, 0.7908317, -1.812226)
+mesh = ExtResource("14_w3rk5")
+
+[node name="TreeSingleB" type="MeshInstance3D" parent="Node" unique_id=724152575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78988, 1.35, -3.0889285)
+mesh = ExtResource("15_5mvff")
+
+[node name="TreeSingleACut" type="MeshInstance3D" parent="Node" unique_id=1054645998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0937624, 1.3526068, -3.375189)
+mesh = ExtResource("16_oye8v")
+
+[node name="TreesBSmall" type="MeshInstance3D" parent="Node" unique_id=1875667859]
+transform = Transform3D(0.083072856, 0, -0.99654347, 0, 1, 0, 0.99654347, 0, 0.083072856, 6.6182027, 1.256498, -2.2523012)
+mesh = ExtResource("17_40n85")
+
+[node name="TreesBMedium" type="MeshInstance3D" parent="Node" unique_id=611355080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9943933, 1.271493, 2.4669957)
+mesh = ExtResource("18_gb15f")
+
+[node name="Pallet" type="MeshInstance3D" parent="Node" unique_id=1701790256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8767881, 1.2463664, 0.52512354)
+mesh = ExtResource("19_sph85")
+
+[node name="Target" type="MeshInstance3D" parent="Node" unique_id=227679471]
+transform = Transform3D(-0.093843855, 0, -0.99558693, 0, 1, 0, 0.99558693, 0, -0.093843855, 4.2947583, 1, -1.4651155)
+mesh = ExtResource("20_o7g6l")
+
+[node name="FlagRed" type="MeshInstance3D" parent="Node" unique_id=1311254435]
+transform = Transform3D(-0.17435618, 0, 0.9846827, 0, 1, 0, -0.9846827, 0, -0.17435618, 2.817481, 1.1325271, -1.3920603)
+mesh = ExtResource("21_vi5kq")
+
+[node name="RockSingleB" type="MeshInstance3D" parent="Node" unique_id=1599616499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2029488, 0.99999994, 1.5258455)
+mesh = ExtResource("6_devvj")
+
+[node name="RockSingleC" type="MeshInstance3D" parent="Node" unique_id=37989318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.952874, 1.0000939, 1.6339378)
+mesh = ExtResource("7_3b0ty")
+
+[node name="TreesACut" type="MeshInstance3D" parent="Node" unique_id=1226322629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.590576, 1.0132549, 0.6206894)
+mesh = ExtResource("8_bg4s2")
